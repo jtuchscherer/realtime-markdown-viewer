@@ -1,0 +1,8 @@
+---
+applications:
+- name: realtime-markdown-viewer
+  memory: 256M
+  instances: 1
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack.git
+  services:
+  - markdown-redis
