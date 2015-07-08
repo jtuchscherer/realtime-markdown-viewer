@@ -10,6 +10,25 @@ var SEED_TEXT = '# Realtime Markdown Editor \n' +
 '\n' +
 'Type anything after the slash in "https://realtimemarkdown.herokuapp.com/" and just start creating markdown.\n' +
 '\n' +
+'### Github Flavored Markdown\n' +
+'\n' +
+'~~Mistaken text.~~\n' +
+'\n' +
+'\n' +
+'| First Header  | Second Header |\n' +
+'| ------------- | ------------- |\n' +
+'| Content Cell  | Content Cell  |\n' +
+'| Content Cell  | Content Cell  |\n' +
+'\n' +
+'```\n' +
+'// this is some source code\n' +
+'// showing prettify\n' +
+'// \n' +
+'// \n' +
+'alert("Hello World")\n' +
+'\n' +
+'```\n' +
+'\n' +
 '### How was this built?\n' +
 '\n' +
 'This website uses the following to work:\n' +
@@ -23,7 +42,7 @@ var SEED_TEXT = '# Realtime Markdown Editor \n' +
 '\n';
 
 window.onload = function() {
-    var converter = new showdown.Converter();
+    var converter = new showdown.Converter({extensions: ['github', 'table', 'prettify']});
     var pad = document.getElementById('pad');
     var markdownArea = document.getElementById('markdown');
 

@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Realtime Markdown Viewer</title>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true" defer="defer"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 </head>
@@ -19,7 +20,9 @@
     </section>
 
     <script src="bower_components/showdown/dist/showdown.min.js"></script>
-    <script src="bower_components/showdown/dist/showdown-github.min.js"></script>
+    <script src="bower_components/showdown-github/dist/showdown-github.min.js"></script>
+    <script src="bower_components/showdown-table/dist/showdown-table.min.js"></script>
+    <script src="bower_components/showdown-prettify/dist/showdown-prettify.min.js"></script>
     <script src="/channel/bcsocket.js"></script>
     <script src="/share/share.uncompressed.js"></script>
     <script src="/share/textarea.js"></script>
