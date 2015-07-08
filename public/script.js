@@ -50,6 +50,17 @@ window.onload = function() {
         }
     });
 
+    // remap saving
+    pad.addEventListener('keydown',function(e) {
+        if(e.keyCode === 83 && e.metaKey) { // cmd + s was pressed
+            console.log("Saving");
+            convertTextAreaToMarkdown();
+
+            // prevent the focus lose
+            e.preventDefault();
+        }
+    });
+
     var previousMarkdownValue;
 
     // convert text area to markdown html
