@@ -2,6 +2,14 @@
 
 var express = require('express');
 var app = express();
+var basicAuth = require('express-basic-auth');
+var cfenv = require("cfenv");
+
+app.use(basicAuth({
+    users: { 'admin': process.env.BASIC_AUTH_PASSWORD },
+    challenge: true,
+    unauthorizedResponse: getUnauthorizedResponse
+}))
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -24,7 +32,7 @@ var sharejs = require('share');
 var redisClient;
 
 if (process.env.VCAP_SERVICES) {
-  var appEnv = require("cfenv").getAppEnv();
+  var appEnv = cfenv.getAppEnv();
   var creds = appEnv.getServiceCreds("markdown-redis");
   console.log(creds)
   var host = creds.host || creds.hostname;
@@ -50,3 +58,9 @@ sharejs.server.attach(app, options);
 // listen on port 8000 (for localhost) or the port defined for heroku
 var port = process.env.PORT || 8000;
 app.listen(port);
+
+function getUnauthorizedResponse(req) {
+    return req.auth ?
+        ('Credentials ' + req.auth.user + ':' + req.auth.password + ' rejected') :
+        'No credentials provided'
+}

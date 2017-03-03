@@ -6,3 +6,5 @@ applications:
   buildpack: https://github.com/cloudfoundry/nodejs-buildpack.git
   services:
   - markdown-redis
+  env:
+    WEB_CONCURRENCY: 1

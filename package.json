@@ -18,20 +18,22 @@
   },
   "author": "Asif Ahmed <asif.h.ahmed@gmail.com>",
   "contributors": [
-    { "name" : "Johannes Tuchscherer",
-      "email" : "jtuchscherer@gmail.com"
+    {
+      "name": "Johannes Tuchscherer",
+      "email": "jtuchscherer@gmail.com"
     }
   ],
   "dependencies": {
-    "bower": "1.4.1",
-    "express": "4.13.1",
+    "bower": "1.8.0",
+    "cfenv": "1.0.0",
     "ejs": "2.3.2",
+    "express": "4.15.0",
+    "express-basic-auth": "^1.0.0",
     "redis": "0.12.1",
-    "share": "0.6.3",
-    "cfenv": "1.0.0"
+    "share": "0.6.3"
   },
   "engines": {
-    "node": "0.12.6",
-    "npm": "2.11.2"
+    "node": "7.6.0",
+    "npm": "4.4.0"
   }
 }

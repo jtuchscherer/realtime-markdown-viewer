@@ -8,7 +8,7 @@ var SEED_TEXT = '# Realtime Markdown Editor \n' +
 '\n' +
 '### How to use this?\n' +
 '\n' +
-'Type anything after the slash in "https://realtimemarkdown.herokuapp.com/" and just start creating markdown.\n' +
+'Type anything after the slash in "https://realtimemarkdown.cfapps.io/" and just start creating markdown.\n' +
 '\n' +
 '### Github Flavored Markdown\n' +
 '\n' +
